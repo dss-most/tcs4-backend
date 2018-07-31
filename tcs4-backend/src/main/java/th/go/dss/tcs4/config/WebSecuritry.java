@@ -14,7 +14,7 @@ public class WebSecuritry extends WebSecurityConfigurerAdapter {
 		.cors().and()
 		.httpBasic().and()
 		.authorizeRequests()
-			.antMatchers("/index.html", "/", "/home", "/login", "/test").permitAll()
+			.antMatchers("/index.html", "/", "/home", "/TestMethod", "/test").permitAll()
 			.anyRequest().authenticated();
 	}
 }
