@@ -27,14 +27,16 @@ public class ServiceRestController {
 	@RequestMapping("/TestMethod")
 	@CrossOrigin()
 	  public Page<TestMethod> findAllTestMethod(
+			  @RequestParam String query,
 			  @RequestParam Integer pageNum, @RequestParam Integer pageSize, 
 			  @RequestParam String sortField, @RequestParam String sortDirection) {
 		logger.debug("/TestMethod is called");
+		logger.debug("query: "  + query);
 		logger.debug("sortField: " + sortField);
 		logger.debug("sortDirection: " + sortDirection);
 		
 		Sort sort =null;
-		
+						
 		if(sortField.length() > 0) {
 			Direction direction;
 			if(sortDirection.equals("desc")) {
@@ -55,7 +57,7 @@ public class ServiceRestController {
 		
 		//Sort.by(direction, properties)
 		
-	    return entityService.findAllTestMethod(pageRequest);
+	    return entityService.findAllTestMethod(query,pageRequest);
 	  }
 	
 }

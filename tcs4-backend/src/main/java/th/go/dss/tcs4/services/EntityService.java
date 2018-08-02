@@ -6,5 +6,5 @@ import org.springframework.data.domain.Pageable;
 import th.go.dss.tcs4.model.lab.TestMethod;
 
 public interface EntityService {
-	public Page<TestMethod> findAllTestMethod(Pageable pageable);
+	public Page<TestMethod> findAllTestMethod(String query, Pageable pageable);
 }
